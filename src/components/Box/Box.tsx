@@ -1,7 +1,7 @@
-import React, { FC, useEffect, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import axios from 'axios';
 
-interface BoxProps {}
+interface BoxProps { }
 
 const Box: FC<BoxProps> = () => {
    const [feeds, setFeedsData] = useState([])
@@ -19,16 +19,19 @@ const Box: FC<BoxProps> = () => {
                   // return res.data;
                   setFeedsData(res.data);
                });
-
+            console.log(response);
          } catch (err) {
             console.error(err);
          }
       };
       fetchData();
    }, []);
-  return (
-      <div>adsf</div>
-  );
+   return (
+      <div>
+         <div>adsf</div>
+         {feeds}
+      </div>
+   );
 };
 
 export default Box;
